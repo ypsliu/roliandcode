@@ -1,0 +1,1 @@
+kafka=com.roiland.platform.log4j.kafka.Log4j2KafkaProvider

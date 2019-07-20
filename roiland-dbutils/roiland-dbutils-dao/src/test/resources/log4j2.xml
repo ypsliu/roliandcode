@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+	<Properties>  
+        <!-- <Property name="log.path">${sys:catalina.home}</Property>   -->
+        <Property name="log.path">/data/logs/startup</Property>
+        <Property name="log.level">debug</Property>  
+        <Property name="project.name"></Property>
+    </Properties>  
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c{1.} - %m%n" />
+		</Console>
+		<RollingFile name="Rolling" 
+			fileName="${sys:log.path}/${sys:project.name}/${sys:log.level}.log" 
+			filePattern="${sys:log.path}/${sys:project.name}/${sys:log.level}-%d{yyyyMMdd}-%i.log.zip">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c{1.} - %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="200 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="160"/>
+		</RollingFile>
+		<Async name="Async">
+	      <AppenderRef ref="Rolling"/>
+	    </Async>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.roiland" level="${log.level}" additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="Rolling" />
+		</Root> 
+	</Loggers>
+</configuration>

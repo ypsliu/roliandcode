@@ -1,0 +1,9 @@
+{
+    "resource" : "/veh/chery/code",
+    "method" : "get",
+    "return" : "String",
+    "variables" : [
+        {"name" : "#headers", "type" : "Map<String,String>", "value" : {"access_token" : "${access_token}", "version" : "0.0.1"}},
+        {"name" : "cnum", "type" : "String", "value" : "${cnum}"}
+    ]
+}

@@ -1,0 +1,4 @@
+{
+    "host" : "https://dev-cloudrive-api.roistar.net",
+    "content-type" : "application/json"
+}

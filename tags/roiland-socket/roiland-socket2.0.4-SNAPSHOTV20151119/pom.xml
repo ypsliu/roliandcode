@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.roiland.platform</groupId>
+	<artifactId>roiland-socket</artifactId>
+	<version>2.0.4-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>roiland-socket</name>
+	<description>楼兰云平台I/O通信包</description>
+
+	<organization>
+		<name>Roiland Group</name>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>jeffy.yang</name>
+			<email>jeffy.yang@roiland.com</email>
+			<organization>Roiland Group</organization>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.plugin.compiler>2.0.2</maven.plugin.compiler>
+		<maven.plugin.resources>2.6</maven.plugin.resources>
+		<maven.plugin.javadoc>2.10.3</maven.plugin.javadoc>
+
+		<junit.version>4.8.1</junit.version>
+
+		<netty.version>4.0.27.Final</netty.version>
+
+		<commons.codec.version>1.9</commons.codec.version>
+		<commons.logging.version>1.2</commons.logging.version>
+
+		<!-- JSON 处理包 -->
+		<fastjson.version>1.2.4</fastjson.version>
+
+		<!-- disruptor -->
+		<akka.actor.version>2.3.14</akka.actor.version>
+		<metrics.version>3.1.2</metrics.version>
+
+		<!-- Roiland Lib -->
+		<roiland.lang.version>1.0.4</roiland.lang.version>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>roiland-releases</id>
+			<name>Roiland Release Repository</name>
+			<url>http://maven.roistar.net/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>roiland-snapshots</id>
+			<name>Roiland Snapshot Repository</name>
+			<url>http://maven.roistar.net/content/repositories/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<!-- JUNIT 测试包 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Netty I/O通信包 -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+
+		<!-- Apache 共通包 -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons.logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons.codec.version}</version>
+		</dependency>
+
+		<!-- FastJSON JSON处理包 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>${metrics.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.11</artifactId>
+			<version>${akka.actor.version}</version>
+		</dependency>
+
+		<!-- Roiland Lib -->
+		<dependency>
+			<groupId>com.roiland.platform</groupId>
+			<artifactId>roiland-lang</artifactId>
+			<version>${roiland.lang.version}</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.plugin.compiler}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven.plugin.resources}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.plugin.javadoc}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>

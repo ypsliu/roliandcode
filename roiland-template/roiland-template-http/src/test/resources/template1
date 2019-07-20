@@ -1,0 +1,9 @@
+{
+    "resource" : "/usr/info",
+    "method" : "get",
+    "return" : "Map<String,Object>",
+    "variables" : [
+        {"name" : "#headers", "type" : "Map<String,String>", "value" : {"access_token" : "${#string.leftPad(#string.trim(access_token),50,'0')}", "version" : "0.0.1"}},
+        {"name" : "fields", "type" : "List<String>", "value" : "${fields}"}
+    ]
+}

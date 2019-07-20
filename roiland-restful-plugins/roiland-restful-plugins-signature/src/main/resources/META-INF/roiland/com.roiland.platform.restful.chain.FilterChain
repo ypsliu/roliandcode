@@ -1,0 +1,2 @@
+signature = com.roilandim.platform.restful.plugins.SignatureRequestFilterChain
+version = com.roilandim.platform.restful.plugins.VersionCheckFilterChain

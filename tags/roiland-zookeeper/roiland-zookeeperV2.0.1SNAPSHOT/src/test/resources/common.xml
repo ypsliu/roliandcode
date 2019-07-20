@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
+
+	<bean id="properties" class="com.roiland.platform.zookeeper.RoilandProperties">
+		<constructor-arg name="project" value="dcs-distribution"/>
+		<constructor-arg name="keys" >
+			<array>
+                <value>mysql.user-center.password</value>
+                <value>mysql.user-center.url</value>
+				<value>dubbo.dcs.group</value>
+                <value>log.level</value>
+                <value>log.path</value>
+			</array>
+		</constructor-arg>
+	</bean>
+
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" >
+		<property name="properties" ref="properties"/>
+	</bean>
+	
+	<bean id="config" class="com.roiland.platform.zookeeper.bean.ConfigBean">
+		<property name="group" value="${dubbo.dcs.group}" />
+	</bean>
+
+</beans>

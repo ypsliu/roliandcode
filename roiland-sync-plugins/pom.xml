@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.roiland.platform</groupId>
+    <artifactId>roiland-sync-plugins</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>roiland-sync-plugins-core</module>
+        <module>roiland-sync-plugins-mysql-traffic</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.plugin.compiler>2.0.2</maven.plugin.compiler>
+        <maven.plugin.resources>2.6</maven.plugin.resources>
+        <maven.plugin.javadoc>2.10.3</maven.plugin.javadoc>
+        <maven.jar.plugin>2.6</maven.jar.plugin>
+        <scala.version>2.10.1</scala.version>
+
+        <commons.logging.version>1.2</commons.logging.version>
+        <spi.version>1.0.2</spi.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>leon.chen</name>
+            <email>leon.chen@roiland.com</email>
+            <organization>Roiland Platform</organization>
+        </developer>
+        <developer>
+            <name>jeffy.yang</name>
+            <email>jeffy.yang@roiland.com</email>
+            <organization>Roiland Platform</organization>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>roiland-releases</id>
+            <name>Roiland Release Repository</name>
+            <url>http://maven.roistar.net/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>roiland-snapshots</id>
+            <name>Roiland Snapshot Repository</name>
+            <url>http://maven.roistar.net/content/repositories/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.roiland.platform</groupId>
+                <artifactId>roiland-sync-plugins-core</artifactId>
+                <version>${project.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.roiland.platform</groupId>
+                <artifactId>roiland-spi-annotation</artifactId>
+                <version>${spi.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.roiland.platform</groupId>
+                <artifactId>roiland-dbutils-dao</artifactId>
+                <version>2.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.roiland</groupId>
+                <artifactId>dcs-dao-common</artifactId>
+                <version>7.2.15-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.10.1</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <phase>process-test-resources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven.plugin.resources}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven.plugin.javadoc}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

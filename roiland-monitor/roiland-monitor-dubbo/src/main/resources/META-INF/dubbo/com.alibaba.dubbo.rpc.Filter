@@ -1,0 +1,1 @@
+dubboMonitorFilter=com.roiland.platform.monitor.dubbo.DubboMonitorFilter

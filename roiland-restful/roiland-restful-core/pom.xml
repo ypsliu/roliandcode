@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>roiland-restful</artifactId>
+        <groupId>com.roiland.platform</groupId>
+        <version>1.4.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>roiland-restful-core</artifactId>
+
+    <properties>
+        <!-- 插件用 -->
+        <resteasy.version>3.0.13.Final</resteasy.version>
+        <validation.api.version>1.0.0.GA</validation.api.version>
+        <roiland.restful.plugins.version>1.0.5</roiland.restful.plugins.version>
+        <roiland.spi.version>1.0.1</roiland.spi.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.api.version}</version>
+        </dependency>
+
+        <!-- 如果要使用json序列化 -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jackson-provider</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-netty</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-spi-loader</artifactId>
+            <version>${roiland.spi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-restful-plugins-iface</artifactId>
+            <version>${roiland.restful.plugins.version}</version>
+        </dependency>
+    </dependencies>
+</project>

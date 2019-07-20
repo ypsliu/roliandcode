@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="test" class="com.roiland.platform.restful.resources.TestServiceImpl"></bean>
+
+    <bean id="config" class="com.roiland.platform.restful.spring.config.SpringPathFilterConfig">
+        <!--<property name="registerFilters">-->
+            <!--<map>-->
+                <!--<entry key="log" value="com.roiland.platform.restful.resources.LogFilter"></entry>-->
+                <!--<entry key="log1" value="com.roiland.platform.restful.resources.LogFilter1"></entry>-->
+                <!--<entry key="log2" value="com.roiland.platform.restful.resources.LogFilter2"></entry>-->
+                <!--<entry key="log3" value="com.roiland.platform.restful.resources.LogFilter3"></entry>-->
+                <!--<entry key="log4" value="com.roiland.platform.restful.resources.LogFilter4"></entry>-->
+            <!--</map>-->
+        <!--</property>-->
+        <property name="defaultFilters" value="log,log1"></property>
+        <property name="pathFilters">
+            <map>
+                <entry key="/test/get" value="log"></entry>
+                <entry key="/test/post" value=""></entry>
+                <entry key="/test/post/bean" value="log1"></entry>
+                <entry key="/test/post1" value="default,log,log1"></entry>
+                <entry key="/test/post2" value="default"></entry>
+                <entry key="/test/post4" value="log1,default,log"></entry>
+                <entry key="/test/post5" value="log1,log,default"></entry>
+                <entry key="/test/post6" value="log2,log3,log4"></entry>
+                <entry key="/test/post7" value="log3"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

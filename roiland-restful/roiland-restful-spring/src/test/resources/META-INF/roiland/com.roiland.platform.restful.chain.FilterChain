@@ -1,0 +1,5 @@
+log=com.roiland.platform.restful.resources.LogFilter
+log1=com.roiland.platform.restful.resources.LogFilter1
+log2=com.roiland.platform.restful.resources.LogFilter2
+log3=com.roiland.platform.restful.resources.LogFilter3
+log4=com.roiland.platform.restful.resources.LogFilter4

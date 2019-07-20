@@ -1,0 +1,28 @@
+{
+    "resource" : "com.roiland.platform.open.api.IVehService",
+    "method" : "getVehInfo",
+    "return" : "void",
+    "variables" : [
+        {"name" : "bean", "type" : "com.roiland.platform.template.core.support.Bean1", "value" : "${bean1}"}
+    ],
+    "struct" : [
+        {
+            "bean" : "com.roiland.platform.template.core.support.Bean1",
+            "fields" : [
+                {"name" : "var1", "type" : "String"},
+                {"name" : "var2", "type" : "int"},
+                {"name" : "var3", "type" : "BigDecimal"},
+                {"name" : "var4", "type" : "com.roiland.platform.template.core.support.Bean2"}
+            ]
+        },
+        {
+            "bean" : "com.roiland.platform.template.core.support.Bean2",
+            "fields" : [
+                {"name" : "var1", "type" : "long"},
+                {"name" : "var2", "type" : "Double"},
+                {"name" : "var3", "type" : "Date"},
+                {"name" : "var4", "type" : "Object"}
+            ]
+        }
+    ]
+}

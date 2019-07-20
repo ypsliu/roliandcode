@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>roiland-restful-plugins</artifactId>
+        <groupId>com.roiland.platform</groupId>
+        <version>1.0.6-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>roiland-restful-plugins-signature</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-restful-plugins-iface</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-spi-annotation</artifactId>
+        </dependency>
+    </dependencies>
+</project>

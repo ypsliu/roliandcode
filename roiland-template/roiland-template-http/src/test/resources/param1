@@ -1,0 +1,4 @@
+{
+    "access_token" : "93f37d6f2abd602a7438e146fc78d6d1",
+    "fields" : ["username","nick","head_img","mobile","mail","qq","weixin","name","sex","birthday"]
+}

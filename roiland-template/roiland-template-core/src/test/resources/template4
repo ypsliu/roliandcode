@@ -1,0 +1,13 @@
+{
+    "resource" : "",
+    "method" : "",
+    "return" : "String",
+    "variables" : [
+        {"name" : "uuid", "type" : "String", "value" : "${uuid}"},
+        {"name" : "group", "type" : "String", "value" : "${group}"},
+        {"name" : "source", "type" : "String", "value" : "${source}"},
+        {"name" : "target", "type" : "String", "value" : "${target}"},
+        {"name" : "type", "type" : "String", "value" : "${type}"},
+        {"name" : "body", "type" : "String", "value" : "${#helper.base64(body)}"}
+    ]
+}

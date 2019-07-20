@@ -1,0 +1,16 @@
+{
+    "resource" : "",
+    "method" : "",
+    "return" : "String",
+    "variables" : [
+        {"name" : "#ack", "type" : "Boolean", "value" : "${ack}"},
+        {"name" : "#username", "type" : "String", "value" : "${username}"},
+        {"name" : "#password", "type" : "String", "value" : "${password}"},
+        {"name" : "uuid", "type" : "String", "value" : "${uuid}"},
+        {"name" : "group", "type" : "String", "value" : "${group}"},
+        {"name" : "source", "type" : "String", "value" : "${source}"},
+        {"name" : "target", "type" : "String", "value" : "${target}"},
+        {"name" : "type", "type" : "String", "value" : "${type}"},
+        {"name" : "body", "type" : "String", "value" : "${body}"}
+    ]
+}

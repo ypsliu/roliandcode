@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <Properties>
+        <Property name="log.path">/data/logs/startup</Property>
+        <Property name="log.level">debug</Property>
+        <Property name="kafka.topic.log">startup</Property>
+        <Property name="project.name"></Property>
+        <Property name="bootstrap.servers"></Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c{1.} - %m%n" />
+        </Console>
+        <RollingFile name="Rolling"
+                     fileName="${sys:log.path}/${sys:project.name}/${sys:log.level}.log"
+                     filePattern="${sys:log.path}/${sys:project.name}/${sys:log.level}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c{1.} - %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 GB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RoilandKafka name="Kafka" topic="${sys:kafka.topic.log}" ignoreExceptions="false">
+            <JSONLayout complete="false" compact="true" eventEol="true" properties="true"/>
+            <Property name="bootstrap.servers">${sys:bootstrap.servers}</Property>
+        </RoilandKafka>
+        <Failover name="Failover" primary="Kafka" retryIntervalSeconds="0">
+            <Failovers>
+                <AppenderRef ref="Rolling"/>
+            </Failovers>
+        </Failover>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache.kafka" level="${sys:log.level}" additivity="false" includeLocation="false">
+            <AppenderRef ref="Failover"/>
+        </Logger>
+        <Logger name="com.roiland" level="${sys:log.level}" additivity="false" includeLocation="false">
+            <AppenderRef ref="Failover"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="Failover"/>
+        </Root>
+    </Loggers>
+</configuration>

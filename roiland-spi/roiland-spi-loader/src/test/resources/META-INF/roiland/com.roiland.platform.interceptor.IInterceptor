@@ -1,0 +1,3 @@
+i1 = com.roiland.platform.interceptor.Interceptor1
+i2 = com.roiland.platform.interceptor.Interceptor2
+i3 = com.roiland.platform.interceptor.Interceptor3

@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.roiland.platform</groupId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+	<artifactId>roiland-examples-dbutils</artifactId>
+
+    <properties>
+        <common.io.version>2.4</common.io.version>
+    </properties>
+
+	<dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${common.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform</groupId>
+            <artifactId>roiland-config-core</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>user-center</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>business</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>shard</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>upgrade</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>independence</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>file</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roiland.platform.data.mysql</groupId>
+            <artifactId>partition</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,12 @@
+{
+    "resource" : "com.roiland.platform.template.resources.IVehService",
+    "method" : "getVehInfo",
+    "return" : "Map<String,Object>",
+    "variables" : [
+        {"name" : "bid", "type" : "String", "value" : "${bid}"},
+        {"name" : "cnum", "type" : "String", "value" : "LVAM0009000919"},
+        {"name" : "ttt", "type" : "String", "value" : "abcddd"},
+        {"name" : "field1", "type" : "Array<String>", "value" : ["fields1","fields2","fields3"]},
+        {"name" : "field2", "type" : "HashMap<String,String>", "value" : {"var1":"${#string.leftPad(''+fields1,10,'0')}","var2":"${#random.nextInt(fields2)}"}}
+    ]
+}
