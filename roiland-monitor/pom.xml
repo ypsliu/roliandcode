@@ -24,7 +24,7 @@
         <maven.plugin.javadoc>2.10.3</maven.plugin.javadoc>
 
         <commons.logging.version>1.2</commons.logging.version>
-        <junit.version>4.8.1</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jersey.version>1.19.1</jersey.version>
         <roiland.lang.version>1.0.8</roiland.lang.version>
         <guava.version>19.0</guava.version>
