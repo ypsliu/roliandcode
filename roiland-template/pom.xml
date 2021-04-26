@@ -35,7 +35,7 @@
         <httpclient.version>4.5.1</httpclient.version>
 
         <junit.version>4.11</junit.version>
-        <commons.io.version>2.4</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <jmh-version>1.11.2</jmh-version>
         <roiland.spi.version>1.0.0</roiland.spi.version>
     </properties>
