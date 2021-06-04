@@ -32,7 +32,7 @@
         <commons.logging.version>1.2</commons.logging.version>
         <roiland.lang.version>1.0.9</roiland.lang.version>
         <jackson.version>2.7.3</jackson.version>
-        <httpclient.version>4.5.1</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
 
         <junit.version>4.11</junit.version>
         <commons.io.version>2.4</commons.io.version>
