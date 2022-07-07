@@ -31,7 +31,7 @@
 		<roiland.lang.version>1.0.9</roiland.lang.version>
 
 		<junit.version>4.8.1</junit.version>
-		<spring.version>3.1.4.RELEASE</spring.version>
+		<spring.version>5.2.21.RELEASE</spring.version>
 	</properties>
 
 	<distributionManagement>
